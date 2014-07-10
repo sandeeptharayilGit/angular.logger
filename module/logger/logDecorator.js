@@ -3,7 +3,7 @@ var pushLogData=function pushRemoteData(data){
         type: "POST",
         url: "/log", 
         contentType: "application/json",
-        data: {message:data}
+        data: {logData:data}
     });
 },
 enchanceLogger = function enchanceLogger( $log ){
@@ -42,7 +42,7 @@ enchanceLogger = function enchanceLogger( $log ){
 
                 if(remoteLoggingRequired){
                     args[0] =supplant(" - {0}{1}", [(className||'[anonymous]-'), args[0] ]);
-                    pushLogData({mode:property,data:args.join()} );
+                     pushLogData(angular.toJson({dataArr:new Array({mode:property,data:args.join()})}));
                 }
 
                 // prepend a timestamp and optional classname to the original output message
