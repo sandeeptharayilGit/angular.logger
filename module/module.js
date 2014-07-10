@@ -14,7 +14,7 @@ var loggerModule=angular.module('core.logger', [])
 
     $log.setOfflineLogsOnOff(offlineLogsRequired);
 
-    $log.getInstance('coreLoggerRun').log('aasdasd');
+    $log.getInstance('coreLoggerRun').log('angular.logger started');
     //anonymous logging
-    $log.error('aasdasd');
+    $log.info('angular.logger started 2');
 }]);
