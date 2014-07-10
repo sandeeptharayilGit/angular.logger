@@ -1,27 +1,30 @@
 {
   "name": "angular.logger",
   "version": "0.0.1",
+  "homepage": "https://github.com/sandeeptharayilGit/angular.logger",
+  "description": "This module provides logger implementation for angularjs applications",
+  "main": [
+    "module/libs/supplant.js",
+    "module/logger/logDecorator.js",
+    "module/module.js",
+    "module/services/loggerService.js"
+    ],
+  "keywords": [
+    "angularjs",
+    "logger",
+    "error",
+    "handler"
+  ],
   "authors": [
     "Sandeep T S"
   ],
-  "description": "This module provides logger implementation",
-  "main": [
-   "module/libs/supplant.js",
-   "module/logger/logDecorator.js",
-   "module/module.js",
-   "module/services/loggerService.js"
-   
-  ],
-  "dependencies": {
-    "angular": "~1.2.16",
-	"jquery":""
-  },
-  "devDependencies": {
-    "angular": "~1.2.16",
-	"jquery":""
-  },
   "license": "MIT",
-  "private": true,
   "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
   ]
 }
