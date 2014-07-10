@@ -1,0 +1,27 @@
+{
+  "name": "angular.logger",
+  "version": "0.0.1",
+  "authors": [
+    "Sandeep T S"
+  ],
+  "description": "This module provides logger implementation",
+  "main": [
+   "module/libs/supplant.js",
+   "module/logger/logDecorator.js",
+   "module/module.js",
+   "module/services/loggerService.js"
+   
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "jquery":""
+  },
+  "devDependencies": {
+    "angular": "~1.2.16",
+    "jquery":""
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+  ]
+}
