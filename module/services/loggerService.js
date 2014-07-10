@@ -7,11 +7,12 @@
  */
  loggerModule.factory("remoteExceptionLoggingService",["$log","$window", 
     function remoteExceptionLoggingService($log, $window){
+        var  log= $log.getInstance('remoteExceptionLoggingService');
         function error(exception, cause){
 
         // preserve the default behaviour which will log the error
         // to the console, and allow the application to continue running.
-        $log.error.apply($log, arguments);
+       
 
         // now try to log the error to the server side.
         try{
@@ -20,19 +21,18 @@
             // use our traceService to generate a stack trace
             var stackTrace = exception.stack;
             
-            var errorData={mode:'error',data:{
+            var errorData={data:{
                 url: $window.location.href,
                 message: errorMessage,
                 type: "exception",
                 stackTrace: stackTrace,
                 cause: ( cause || "")
             }};
-            
-            pushLogData(angular.toJson({dataArr:new Array(errorData)}));
+            log.error(errorData); 
 
         } catch (loggingError){
-            $log.warn("Error server-side logging failed");
-            $log.error(loggingError);
+            log.warn("Error server-side logging failed");
+            log.error(loggingError);
         }
     }
     return(error);

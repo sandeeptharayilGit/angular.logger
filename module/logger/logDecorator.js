@@ -41,12 +41,12 @@ enchanceLogger = function enchanceLogger( $log ){
                 now  = new Date().toLocaleTimeString();
 
                 if(remoteLoggingRequired){
-                    args[0] =supplant(" - {0}{1}", [(className||'[anonymous]-'), args[0] ]);
+                    args[0] =supplant(" - {0}{1}", [(className||'[anonymous]-'), (typeof args[0]=="object"?angular.toJson(args[0],true):args[0]) ]);
                      pushLogData(angular.toJson({dataArr:new Array({mode:property,data:args.join()})}));
                 }
 
                 // prepend a timestamp and optional classname to the original output message
-                args[0] = supplant("{0}{1}", [ now, args[0] ]);
+                args[0] = supplant("{0}{1}", [ now, (typeof args[0]=="object"?angular.toJson(args[0],true):args[0]) ]);
                 var logText=args.join()
                 logFn.call( null, logText );
                 if(offlineRequired){
