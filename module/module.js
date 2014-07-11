@@ -1,9 +1,9 @@
 'use strict';
 
-var loggerModule=angular.module('core.logger', [])
+var loggerModule=angular.module('angular.logger', [])
 .config(["$provide", LogDecorator ])
 .run(["$log",function coreLoggerRun($log) {
-
+  	var log=$log.getInstance('coreLoggerRun');
     var remoteLoggingRequired=true;
     var offlineLogsRequired=true;
 
@@ -14,7 +14,8 @@ var loggerModule=angular.module('core.logger', [])
 
     $log.setOfflineLogsOnOff(offlineLogsRequired);
 
-    $log.getInstance('coreLoggerRun').log('angular.logger started');
+    log.log('angular.logger started');
+
     //anonymous logging
-    $log.info('angular.logger started 2');
+    $log.info('angular.logger started and logging anonymously');
 }]);

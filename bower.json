@@ -1,6 +1,6 @@
 {
   "name": "angular.logger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/sandeeptharayilGit/angular.logger",
   "description": "This module provides logger implementation for angularjs applications",
   "main": [
