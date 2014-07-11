@@ -1,13 +1,13 @@
 {
   "name": "angular.logger",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/sandeeptharayilGit/angular.logger",
   "description": "This module provides logger implementation for angularjs applications",
   "main": [
     "module/libs/supplant.js",
     "module/logger/logDecorator.js",
     "module/module.js",
-    "module/services/loggerService.js"
+    "module/services/exceptionHandler.js"
     ],
   "keywords": [
     "angularjs",
