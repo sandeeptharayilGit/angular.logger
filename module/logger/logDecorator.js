@@ -39,9 +39,9 @@ enchanceLogger = function enchanceLogger( $log ){
              var enhancedLogFn = function enhancedLogFn(){
                 var args = Array.prototype.slice.call(arguments),
                 now  = new Date().toLocaleTimeString();
-
+                args[0] =supplant(" - {0}{1}", [(className||'[anonymous]-'), (typeof args[0]=="object"?angular.toJson(args[0],true):args[0]) ]);
+                
                 if(remoteLoggingRequired){
-                    args[0] =supplant(" - {0}{1}", [(className||'[anonymous]-'), (typeof args[0]=="object"?angular.toJson(args[0],true):args[0]) ]);
                      pushLogData(angular.toJson({dataArr:new Array({mode:property,data:args.join()})}));
                 }
 
