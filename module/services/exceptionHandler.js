@@ -16,7 +16,7 @@
 
         // now try to log the error to the server side.
         try{
-            var errorMessage = exception.toString();
+            var errorMessage = (typeof exception ==="object"?JSON.stringify(exception):exception.toString());
             
             // use our traceService to generate a stack trace
             var stackTrace = exception.stack;
